@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+
+
+.parent {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(22, 22, 22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.left {
+    width: 50%;
+    height: 100%;
+    /* background-color: yellow; */
+
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0px;
+
+
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+
+}
+
+
+.model {
+    width: 50%;
+    height: 100%;
+}
+
+
+
+@media (800px<width<1300px) {
+
+
+    .model {
+        height: 50rem;
+        width: 560rem;
+        border-radius: 50%;
+        background-color: rgb(29, 29, 29);
+
+    }
+
+    .parent {
+        height: 200vh;
+
+        flex-direction: column
+    }
+
+
+    .left {
+        height: 50%;
+        width: 90%
+    }
+
+    .model {
+        width: 90%;
+        height: 50%;
+    }
+
+
+
+}
+
+
+
+
+
+@media (width<800px) {
+
+
+    .parent {
+        height: 170vh;
+
+        flex-direction: column
+    }
+
+
+    .left {
+        height: 50%
+    }
+
+    /* 
+    .model {
+        width: 90%;
+        height: 50%;
+    } */
+
+
+
+}
