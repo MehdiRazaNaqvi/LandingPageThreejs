@@ -10,7 +10,6 @@ Title: Sony MDR-7506 Headphones
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
-
 export default function Model(props) {
   const { nodes, materials } = useGLTF('/headphone-transformed.glb')
   return (

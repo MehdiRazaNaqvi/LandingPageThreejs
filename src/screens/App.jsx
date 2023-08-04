@@ -1,12 +1,17 @@
 import React from 'react'
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Stage } from "@react-three/drei"
-import Model from "../Models/Headphone"
+import Model from "../Models/Car"
 import { Typography, Container, Card } from '@mui/material'
 import { styled } from '@mui/system';
 import "../style/index.css"
+import Typed from "typed.js";
+import { useEffect } from 'react'
+
+
 
 function App() {
+
 
 
     const StyledH1 = styled(Typography)(({ theme }) => ({
@@ -40,9 +45,20 @@ function App() {
 
 
 
+    useEffect(() => {
+        const options = {
+            strings: ["Syed Mehdi Raza"],
+            typeSpeed: 200, // Typing speed in milliseconds
+            showCursor: false, // Hide the blinking cursor
+        };
 
+        const typed = new Typed(".typed-name", options);
 
-
+        return () => {
+            // Clean up Typed instance on component unmount
+            typed.destroy();
+        };
+    }, []);
 
     return (
 
@@ -53,25 +69,28 @@ function App() {
 
 
                 <StyledH1 className="title" sx={{ fontFamily: 'Ubuntu, sans-serif' }} align='center' mt={20} variant="h1">
-                    Unrivaled
-                    <span style={{ color: 'orange' }}>Durability.</span>
+                    Hi, I'm
+                    <span className='typed-name' style={{ color: 'orange' }}>Durability.</span>
+
                 </StyledH1>
 
 
-                <StyledH6 mt={6} sx={{ fontFamily: 'Ubuntu, sans-serif', color: "gray" }} align='center' variant="subtitle1" component="h2">
+                {/* <StyledH6 mt={6} sx={{ fontFamily: 'Ubuntu, sans-serif', color: "gray" }} align='center' variant="subtitle1" component="h2">
                     Enjoy years of exceptional performance without compromise.
-                </StyledH6>
+                </StyledH6> */}
+
             </div>
 
 
-            <span className='model'>
+            {/* <span className='model'>
                 <Canvas>
                     <Stage environment="city" intensity={0.5}>
                         <Model />
                     </Stage>
                     <OrbitControls enableZoom={false} enableRotate={true} autoRotate={true} autoRotateSpeed={0.5} />
                 </Canvas>
-            </span>
+            </span> */}
+
 
         </div>
 
